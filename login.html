@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>登入頁面</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel=stylesheet type="text/css" href="login.css?version=20161028" > 
+         
+            <script>
+        function refresh_code(){ 
+            document.getElementById("imgcode").src="vercode.php"; 
+        } 
+    </script>
+    </head>
+    <body>
+        
+          <div  class="leftbord">  
+             <font face="Microsoft JhengHei" color="white" size="5">
+             <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMT-SYSTEM</b></font>       
+    
+   </div>
+ <div  class="rightbord">   
+    
+  <form action="login.php" method="post" style="font-size:16px; line-height:200%; ">
+        <br>    <br>    <br>    <br>    <br>     <br>    <br>    
+&nbsp;帳號:<input type="text" name="account" placeholder="account">
+               <br>    
+&nbsp;密碼:<input type="password" name="password" placeholder="password"> 
+             <br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;驗證碼:<input type="text" name="checkvercode" size="10" maxlength="10" style="vertical-align:middle">&nbsp;&nbsp;<img src="vercode.php" onclick="refresh_code()" style="vertical-align:middle">    
+             <br>   
+             
+<input type="submit" value="提交">
+<input type="reset" value="清除">
+<input type ="button" onclick="javascript:location.href='topic1.html'" value="回到首頁">
+          </form>     
+       </div>
+    <div  class="downbord">   
+      <font face="Microsoft JhengHei" color="white" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址:台北市重慶北路二段162號&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;電話:0955305205&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信箱：a0955305205@hotmail.com</font> 
+    </div>
+       
+    </body>
+</html>

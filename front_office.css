@@ -1,0 +1,48 @@
+.leftbord {
+   position:absolute;
+   background-color:#4F4F4F;
+   color:white;
+   height:95.2%;
+   width:20%; 
+   padding:11px; 
+   float:left;
+   line-height:500px;
+   display: block;
+   
+}
+.rightbord {
+     background-image:url(topic2.jpg);
+     background-size: 200px;
+     background-repeat: no-repeat;
+     background-position: center;
+   position: relative;
+   height: 90%;
+   color:#3C3C3C;
+   padding:20px; 
+   float:left;
+   left: 22%;
+}
+.downbord {
+   position:absolute;
+    height: 10px;
+   background-color:grey;
+   padding:25px; 
+   width:74%;
+  top:90.4%;
+   left: 22.2%;
+  // display: block;
+}
+a:link {
+text-decoration:none;
+color:#80FFFF;
+}
+a:visited {
+color:#80FFFF;
+
+}
+a:hover {
+//è¨­å®šæ»‘é¼ ç§»ç¶“çš„é€£çµ
+text-decoration:underline;
+background-color:#fafafa;
+color:gray;
+}

@@ -1,0 +1,400 @@
+<html >
+    <head>
+        <title>行事曆</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>    
+ 
+    <body>
+  <style type="text/css">
+        A:hover {color: #9AC2C5}
+        </style>
+       <script type="text/javascript">
+       
+        window.onload = function(){         
+             var currentFirstDate;
+            var cells = document.getElementsByTagName('yo');
+            var currentFirstDate;
+              var class1 = document.getElementsByTagName('god1');
+           var class2 = document.getElementsByTagName('god2');
+            var class3 = document.getElementsByTagName('god3');
+             var class4 = document.getElementsByTagName('god4');
+                var class5 = document.getElementsByTagName('god5');
+                 var class6 = document.getElementsByTagName('god6');
+                var class7 = document.getElementsByTagName('god7');
+              var i=0;
+            var formateclass = function(date){
+                 var week = ['7','1','2','3','4','5','6'][date.getDay()];  
+                   if(week==='1'){
+                    class1[i].innerHTML = "";
+                    class2[i].innerHTML = "武術課<br/>DEF";
+                    class3[i].innerHTML = "";
+                    class4[i].innerHTML = "";
+                    class5[i].innerHTML = "";
+                    class6[i].innerHTML = "舞蹈課<br/>GHI";
+                    class7[i].innerHTML = "";         
+                }
+                else if(week==='2'){
+                    class1[i].innerHTML = "舞蹈課<br/>GHI";
+                    class2[i].innerHTML = "";
+                    class3[i].innerHTML = "舞蹈課<br/>GHI";
+                    class4[i].innerHTML = "";
+                    class5[i].innerHTML = "";
+                    class6[i].innerHTML = "空翻課<br/>ABC";
+                    class7[i].innerHTML = "";    
+                }
+                else if(week==='3'){
+                    class1[i].innerHTML = "";
+                    class2[i].innerHTML = "舞蹈課<br/>GHI";
+                    class3[i].innerHTML = "";
+                    class4[i].innerHTML = "空翻課<br/>ABC";
+                    class5[i].innerHTML = "武術課<br/>DEF";
+                    class6[i].innerHTML = "武術課<br/>DEF";
+                    class7[i].innerHTML = "";    
+                }
+                else if(week==='4'){
+                    class1[i].innerHTML = "";
+                    class2[i].innerHTML = "";
+                    class3[i].innerHTML = "舞蹈課<br/>GHI";
+                    class4[i].innerHTML = "空翻課<br/>ABC";
+                    class5[i].innerHTML = "";
+                    class6[i].innerHTML = "舞蹈課<br/>GHI";
+                    class7[i].innerHTML = "";    
+                }
+                else if(week==='5'){
+                    class1[i].innerHTML = "武術課<br/>DEF";
+                    class2[i].innerHTML = "";
+                    class3[i].innerHTML = "";
+                    class4[i].innerHTML = "";
+                    class5[i].innerHTML = "";
+                    class6[i].innerHTML = "空翻課<br/>ABC";
+                    class7[i].innerHTML = "";    
+                }
+                else if(week==='6'){
+                    class1[i].innerHTML = "";
+                    class2[i].innerHTML = "空翻課<br/>ABC";
+                    class3[i].innerHTML = "武術課<br/>CDE";
+                    class4[i].innerHTML = "";
+                    class5[i].innerHTML = "";
+                    class6[i].innerHTML = "";
+                    class7[i].innerHTML = "舞蹈課<br/>GHI";    
+                }
+                else if(week==='7'){
+                    class1[i].innerHTML = "";
+                    class2[i].innerHTML = "空翻課<br/>ABC";
+                    class3[i].innerHTML = "";
+                    class4[i].innerHTML = "";
+                    class5[i].innerHTML = "空翻課<br/>ABC";
+                    class6[i].innerHTML = "";
+                    class7[i].innerHTML = "舞蹈課<br/>GHI";    
+                 }    
+                 i++;
+                 return;
+            };
+            var formatDate = function(date){ 
+              //  var year = date.getFullYear()+'年';
+                var month = (date.getMonth()+1)+'/';
+                var day = date.getDate();
+                var week = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][date.getDay()];  
+                return month+day+"<br/>"+week;
+            };
+            var addDate= function(date,n){       
+                date.setDate(date.getDate()+n);        
+                return date;
+            };
+            var setDate = function(date){  
+                i=0;
+                date = addDate(date,0);
+                currentFirstDate = new Date(date);
+                for(var j = 0;j<7;j++){                 
+                    cells[j].innerHTML = formatDate(j===0 ? date : addDate(date,1));
+                    formateclass(date);
+                }                
+            };             
+               document.getElementById('last-week').onclick = function(){
+                    setDate(addDate(currentFirstDate,-7));         
+                };             
+               document.getElementById('next-week').onclick = function(){                 
+                    setDate(addDate(currentFirstDate,7));
+                };     
+               document.getElementById('gg1').onclick=function(){
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+1+"&day="+0; 
+               };       
+               document.getElementById('gg11').onclick=function(){
+
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+1+"&day="+1; 
+               };      
+               document.getElementById('gg111').onclick=function(){
+      
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+1+"&day="+2; 
+               };      
+               document.getElementById('gg1111').onclick=function(){
+
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+1+"&day="+3; 
+               };      
+               document.getElementById('gg11111').onclick=function(){
+  
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+1+"&day="+4; 
+               };      
+               document.getElementById('gg111111').onclick=function(){
+        
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+1+"&day="+5; 
+               };  
+                document.getElementById('gg1111111').onclick=function(){
+  
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+1+"&day="+6; 
+               };   
+               document.getElementById('gg2').onclick=function(){
+              
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+2+"&day="+0; 
+               };
+               document.getElementById('gg22').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+2+"&day="+1; 
+               };     
+               document.getElementById('gg222').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+2+"&day="+2; 
+               };     
+               document.getElementById('gg2222').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+2+"&day="+3; 
+               };     
+               document.getElementById('gg22222').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+2+"&day="+4; 
+               };     
+               document.getElementById('gg222222').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+2+"&day="+5; 
+               };     
+               document.getElementById('gg2222222').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+2+"&day="+6; 
+               };     
+               document.getElementById('gg3').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+3+"&day="+0; 
+               };
+                document.getElementById('gg33').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+3+"&day="+1; 
+               };
+                document.getElementById('gg333').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+3+"&day="+2; 
+               };
+                document.getElementById('gg3333').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+3+"&day="+3; 
+               };
+                document.getElementById('gg33333').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+3+"&day="+4; 
+               };
+                document.getElementById('gg333333').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+3+"&day="+5; 
+               };
+                document.getElementById('gg3333333').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+3+"&day="+6; 
+               };
+               document.getElementById('gg4').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+4+"&day="+0; 
+               };
+                document.getElementById('gg44').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+4+"&day="+1; 
+               };
+                document.getElementById('gg444').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+4+"&day="+2; 
+               };
+                document.getElementById('gg4444').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+4+"&day="+3; 
+               };
+                document.getElementById('gg44444').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+4+"&day="+4; 
+               };
+                document.getElementById('gg444444').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+4+"&day="+5; 
+               };
+                document.getElementById('gg4444444').onclick=function(){
+               
+                    window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+4+"&day="+6; 
+               };
+               document.getElementById('gg5').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+5+"&day="+0; 
+               }; 
+                document.getElementById('gg55').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+5+"&day="+1; 
+               };   
+                document.getElementById('gg555').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+5+"&day="+2; 
+               };  
+                document.getElementById('gg5555').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+5+"&day="+3; 
+               };   
+                document.getElementById('gg55555').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+5+"&day="+4; 
+               };   
+                document.getElementById('gg555555').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+5+"&day="+5; 
+               };   
+                document.getElementById('gg5555555').onclick=function(){
+               
+                   window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+5+"&day="+6; 
+               };   
+               document.getElementById('gg6').onclick=function(){
+               
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+6+"&day="+0; 
+               };   
+                document.getElementById('gg66').onclick=function(){
+              
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+6+"&day="+1; 
+               }; 
+                document.getElementById('gg666').onclick=function(){
+               
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+6+"&day="+2; 
+               }; 
+                document.getElementById('gg6666').onclick=function(){
+               
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+6+"&day="+3; 
+               }; 
+                document.getElementById('gg66666').onclick=function(){
+               
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+6+"&day="+4; 
+               }; 
+                document.getElementById('gg666666').onclick=function(){
+               
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+6+"&day="+5; 
+               }; 
+                document.getElementById('gg6666666').onclick=function(){
+               
+                  window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+6+"&day="+6; 
+               }; 
+               document.getElementById('gg7').onclick=function(){
+               
+                 window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+7+"&day="+0; 
+                };
+                 document.getElementById('gg77').onclick=function(){
+               
+                 window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+7+"&day="+1; 
+                };
+                 document.getElementById('gg777').onclick=function(){
+               
+                 window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+7+"&day="+2; 
+                };
+                 document.getElementById('gg7777').onclick=function(){
+               
+                 window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+7+"&day="+3; 
+                };
+                 document.getElementById('gg77777').onclick=function(){
+               
+                 window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+7+"&day="+4; 
+                };
+                 document.getElementById('gg777777').onclick=function(){
+               
+                 window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+7+"&day="+5; 
+                };
+                 document.getElementById('gg7777777').onclick=function(){
+               
+                 window.location.href="showclass.php?month=" +currentFirstDate.getMonth()+"&date="+currentFirstDate.getDate()+"&class="+7+"&day="+6; 
+                };
+            setDate(new Date());   
+        };
+         
+      </script>
+       
+
+         <table id="monitor"  style="text-align:center;" width="100%" border="2">
+           <td><button id="last-week" style="width:25px;height:20px;"> < </button> 時間 <button id="next-week" style="width:25px;height:20px;"> > </button></td>
+     
+            <td><font face="微軟正黑體"><yo></yo></font></td>
+              <td><font face="微軟正黑體"><yo></yo></font></td>
+               <td><font face="微軟正黑體"><yo></yo></font></td>
+                <td><font face="微軟正黑體"><yo></yo></font></td>
+                 <td><font face="微軟正黑體"><yo></yo></font></td>
+                  <td><font face="微軟正黑體"><yo></yo></font></td>
+                   <td><font face="微軟正黑體"><yo></yo></font></td>
+            <tr>
+    <td width="16%"><font face="微軟正黑體" size="3" >7:00~8:30  </font></td>
+    <td width="12%"><font face="微軟正黑體"><a id="gg1" ><b><god1></god1></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg11" ><b><god1></god1></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg111" ><b><god1></god1></b></a></font></td>
+     <td width="12%"font face="微軟正黑體"><a id="gg1111" ><b><god1></god1></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg11111" ><b><god1></god1></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg111111" ><b><god1></god1></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg1111111" ><b><god1></god1></b></a></font></td>
+            <tr>
+     <td width="16%"><font face="微軟正黑體" size="3" >9:00~10:30  </font>  </td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg2" ><b><god2></god2></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg22" ><b><god2></god2></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg222" ><b><god2></god2></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg2222" ><b><god2></god2></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg22222" ><b><god2></god2></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg222222" ><b><god2></god2></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg2222222" ><b><god2></god2></b></a></font></td>
+            <tr>
+     <td width="16%"><font face="微軟正黑體" size="3" >10:30~12:00  </font>  </td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg3" ><b><god3></god3></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg33" ><b><god3></god3></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg333" ><b><god3></god3></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg3333" ><b><god3></god3></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg33333" ><b><god3></god3></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg333333" ><b><god3></god3></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg3333333" ><b><god3></god3></b></a></font></td>
+            <tr>
+     <td width="16%"><font face="微軟正黑體" size="3" >14:30~16:00   </font> </td>
+    <td width="12%"><font face="微軟正黑體"><a id="gg4" ><b><god4></god4></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg44" ><b><god4></god4></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg444" ><b><god4></god4></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg4444" ><b><god4></god4></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg44444" ><b><god4></god4></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg444444" ><b><god4></god4></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg4444444" ><b><god4></god4></b></a></font></td>
+            <tr>
+     <td width="16%"><font face="微軟正黑體" size="3" >17:00~18:30  </font>  </td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg5" ><b><god5></god5></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg55" ><b><god5></god5></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg555" ><b><god5></god5></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg5555" ><b><god5></god5></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg55555" ><b><god5></god5></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg555555" ><b><god5></god5></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg5555555" ><b><god5></god5></b></a></font></td>
+        <tr>
+    <td width="16%"><font face="微軟正黑體" size="3" >19:00~20:30   </font> </td>
+    <td width="12%"><font face="微軟正黑體"><a id="gg6" ><b><god6></god6></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg66" ><b><god6></god6></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg666" ><b><god6></god6></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg6666" ><b><god6></god6></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg66666" ><b><god6></god6></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg666666" ><b><god6></god6></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg6666666" ><b><god6></god6></b></a></font></td>
+      <tr>
+     <td width="16%"><font face="微軟正黑體" size="3" >21:00~22:30    </font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg7" ><b><god7></god7></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg77" ><b><god7></god7></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg777" ><b><god7></god7></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg7777" ><b><god7></god7></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg77777" ><b><god7></god7></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a id="gg777777" ><b><god7></god7></b></a></font></td>
+     <td width="12%"><font face="微軟正黑體"><a  id="gg7777777" ><b><god7></god7></b></a></font></td>
+        <tr>
+</table>
+        <br>
+        <input type ="button" onclick="javascript:location.href='front_office.html'" value="回到首頁">
+</body>
+</html>

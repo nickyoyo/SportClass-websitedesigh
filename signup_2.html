@@ -1,0 +1,75 @@
+
+
+    <head>
+        <title>註冊系統</title>
+           <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel=stylesheet type="text/css" href="signup.css"> 
+  <script>
+
+$("#security").click(function() 
+        {
+            if($("#security").prop("checked")){         //打勾
+                // document.getElementById('button').disabled = 'true';
+                $("#buttoncheck").prop("disabled", true);
+            }
+            else{
+               // document.getElementById('button').disabled = 'false';
+               $("#buttoncheck").prop("disabled", false);
+            }
+      });
+</script>
+   
+    </head>
+    
+         <div  class="leftbord">   
+        <form action="signup_2.php" method="post" style="font-size:16px; line-height:150%;">
+            帳號   : <br>
+                <input type="text" name="account" required/>
+            <br>
+            密碼   : <br>
+                <input type="password" name="password" required/>
+                 <font size="2px" color="gray"> 格式 : 請包含英文大寫+英文小寫+數字 </font>
+            <br>
+            再次輸入密碼   : <br>
+                <input type="password" name="check" required/>
+            <br>
+            姓名 : <br>
+                <input type="text" name="name" required/>
+            <br>
+            身份 : <br>
+            <input type="radio" value=3 name="identity" checked="true">前臺
+            <br>
+            性別 : <br>
+                    <input type="radio" value=M name="gender">男
+                    <input type="radio" value=F name="gender">女
+                    <input type="radio" value=X name="gender">其他
+            <br>
+          信箱 : <br>
+               <input type="text" name="email" required/>
+               <br>    
+             電話 : <br>
+               <input type="text" name="phone" required/>
+               <br>
+               Line ID : <br>
+               <input type="text" name="lineID" required/>
+               <br> <br> 
+               <input name="security" id="security" type="checkbox">
+               <font size="2px" color="black">
+               您同意提供個人資料予長興極限空間為活動資訊通知範圍內之蒐集、處理及利用，除非事先經過您的同意，否則這些個人資料不會提供給任何第三人，或移作其他目的使用。
+               </font>
+               <br>   <br>         
+        <input type="submit" value="提交" id="buttoncheck">
+  <input type="reset" value="清除">
+  <input type ="button" onclick="javascript:location.href='topic1.html'" value="首頁">
+  
+        </form>
+     </div>
+      
+           <div  class="rightbord">   
+                 <br><br><br><br>  <br><br><br><br>
+       <img src="topic2.jpg"  width="150" height="150">
+         </div>
+    </body>
+</html>
+

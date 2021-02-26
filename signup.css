@@ -1,0 +1,15 @@
+.leftbord {
+   height:463px;
+   width:32%; 
+   padding:20px; 
+   float:left;
+   line-height:500px;
+   display: block;
+   
+}
+.rightbord {
+   position: relative;
+   left: 20%;
+   padding:20px; 
+   float:left;
+}
