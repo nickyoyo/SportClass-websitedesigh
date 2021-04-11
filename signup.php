@@ -92,7 +92,7 @@ window.alert = function (name) {
       $sql2="Create Table c$account Select * From modelhistory";
       mysqli_query($conn,$sql2);
       
-     header("refresh:3;url=topic1.html");
+     header("refresh:3;url=index.html");
 
              }
     }
