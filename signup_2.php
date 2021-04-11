@@ -88,7 +88,7 @@ window.alert = function (name) {
               mysqli_query($con,$sql);
              echo "註冊完成";
 
-         header("refresh:3;url=topic1.html");
+         header("refresh:3;url=index.html");
 
                  }
         }
